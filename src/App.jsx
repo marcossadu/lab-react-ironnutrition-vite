@@ -2,6 +2,7 @@ import "./App.css";
 import foodsJson from "./foods.json";
 import { useState } from "react";
 import FoodBox from "./components/FoodBox";
+import AddFoodForm from "./components/AddFoodForm";
 // import AddFoodForm from "./components/AddFoodForm";
 
 function App() {
@@ -12,9 +13,14 @@ function App() {
 
     setFoods(result);
   };
+
+  const handleCreateFood = (createdFood) => {
+setFoods([
+      ...foods, createdFood]);
+  }
   return (
     <div className="App">
-      {/* <AddFoodForm></AddFoodForm> */}
+      <AddFoodForm onCreateFood={handleCreateFood}></AddFoodForm>
 
       {foods.map((f) => (
         <FoodBox key={f.id} food={f} onDelete={handleDelete} />
