@@ -17,6 +17,7 @@ function FoodBox() {
         <Button type="primary" onClick={() => {}}> Delete </Button>
       </Card>
     </Col>
+    
   );
 }
 

@@ -1,5 +1,6 @@
 import {useState} from "react"
 import { v4 as uuidv4 } from 'uuid';
+import { Divider, Input, Button } from "antd";
 
 // Your code here
 
@@ -25,24 +26,25 @@ event.preventDefault();
   
   return <div>
     <form style={{display:"flex", flexDirection:"column"}} onSubmit={handleSubmit} > 
+    <Divider>Add Food Entry</Divider>
 <label >
   Name
-  <input type="text" name="name" maxLength={50} value={name} onChange={(e)=> setName(e.target.value)} required></input>
+  <Input type="text" name="name" maxLength={50} value={name} onChange={(e)=> setName(e.target.value)} required></Input>
  </label>
 <label > Image
-  <input type="url" name="image" maxLength={50} value={image} onChange={(e)=> setImage(e.target.value)} required></input> 
+  <Input type="url" name="image" maxLength={50} value={image} onChange={(e)=> setImage(e.target.value)} required></Input> 
 </label>
 <label > Calories
-  <input type="number" name="calories" min={0} max={10000} value={calories} onChange={(e)=> setCalories(e.target.value)} required></input> 
+  <Input type="number" name="calories" min={0} max={10000} value={calories} onChange={(e)=> setCalories(e.target.value)} required></Input> 
   </label>
 <label>
   servings
-<input type="number" name="servings"min={1} max={1000} value={servings} onChange={(e)=> setServings(e.target.value)} required></input> 
+<Input type="number" name="servings"min={1} max={1000} value={servings} onChange={(e)=> setServings(e.target.value)} required></Input> 
 </label>
 
-<button onClick={() => {
+<Button onClick={() => {
        
-      }}>Create</button>
+      }}>Create</Button>
 </form>
   </div>;
 
